@@ -1,0 +1,1459 @@
+/* ==========================================================================
+   FIRST CAREER ADVISORY - OFFICIAL STYLESHEET (REACT + VITE)
+   Atualizado conforme todas as especificações e identidade visual:
+   1. Header: Seletor de idioma em botão único com globo (Lucide) e borda #cda568
+   2. Sobre Nós: Monograma 'f' no canto superior esquerdo com traço dourado
+      e foto em arco vertical romano com detalhe dourado (#cda568)
+   3. Nossas Soluções: Botão 'Saiba mais' com Modal dinâmico, escopo e WhatsApp
+   4. Fale Conosco: Foto em arco horizontal com moldura dourada (#cda568) e sem sombra;
+      Select customizado com hover/seleção em dourado (#cda568) sem azul do navegador
+   5. Todas as imagens e logotipos em formato JPG
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. DESIGN TOKENS
+   -------------------------------------------------------------------------- */
+:root {
+  /* Cores de Fundo */
+  --bg-dark: #0c0d0c;
+  --bg-dark-card: #14161a;
+  --bg-footer: #07080a;
+  --bg-white: #ffffff;
+  --bg-light-card: #ffffff;
+
+  /* Cores de Destaque */
+  --color-gold: #cda568;
+  --color-gold-hover: #b89153;
+  --color-gold-glow: rgba(205, 165, 104, 0.28);
+  --color-caramel-arch: #cda568;
+
+  /* Tipografia & Contrastes */
+  --color-text-white: #ffffff;
+  --color-text-dark: #0c0d0c;
+  --color-text-muted-dark: #b2bac2;
+  --color-text-muted-light: #5a6470;
+  --color-border-dark: rgba(255, 255, 255, 0.08);
+  --color-border-light: #e2e8f0;
+
+  --color-whatsapp: #25d366;
+
+  /* Fontes */
+  --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Bodoni Moda', 'Playfair Display', 'Cormorant Garamond', 'Georgia', serif;
+
+  /* Bordas e Layout */
+  --radius-pill: 9999px;
+  --radius-card: 16px;
+  --container-width: 1220px;
+  --header-height: 84px;
+
+  /* Transições */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & BASE
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-dark);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.6;
+  background-color: var(--bg-dark);
+  color: var(--color-text-white);
+  overflow-x: hidden;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* --------------------------------------------------------------------------
+   3. BOTÕES GERAIS
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  transition: var(--transition);
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-gold {
+  background-color: var(--color-gold);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(205, 165, 104, 0.25);
+}
+
+.btn-gold:hover {
+  background-color: var(--color-gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--color-gold-glow);
+}
+
+/* --------------------------------------------------------------------------
+   4. HEADER (FIXED GLASSMORPHISM)
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 1000;
+  background-color: rgba(12, 13, 12, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: var(--transition);
+}
+
+.site-header.scrolled {
+  height: 72px;
+  background-color: rgba(12, 13, 12, 0.95);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.header-container {
+  max-width: var(--container-width);
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-monogram {
+  height: 38px;
+  width: auto;
+  border-radius: 4px;
+  filter: none;
+  transition: var(--transition);
+}
+
+.header-logo:hover .header-monogram {
+  transform: scale(1.06);
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.2px;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: transparent;
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Seletor de Idioma: Botão Único Arredondado com Globo e Borda Dourada (#cda568) */
+.lang-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #0c0d0c;
+  border: 1.5px solid var(--color-gold);
+  border-radius: var(--radius-pill);
+  padding: 7px 16px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.lang-toggle-btn:hover {
+  background-color: rgba(205, 165, 104, 0.15);
+  box-shadow: 0 0 14px var(--color-gold-glow);
+  transform: translateY(-1px);
+}
+
+.lang-globe-icon {
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.lang-text {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  text-transform: none;
+}
+
+.btn-header {
+  padding: 10px 22px;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+}
+
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 19px;
+  cursor: pointer;
+}
+
+.mobile-toggle span {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.mobile-toggle.active span:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+.mobile-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.mobile-toggle.active span:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* --------------------------------------------------------------------------
+   5. HERO SECTION
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 140px 24px 80px 24px;
+  }
+
+.hero-bg-media {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-bg-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 100%;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(12, 13, 12, 0.15) 0%, rgba(12, 13, 12, 0.30) 100%),
+              linear-gradient(180deg, rgba(12, 13, 12, 0.1) 0%, rgba(12, 13, 12, 0.4) 100%); 
+  display: none;
+  border: 3px solid red;
+}
+
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-branding {
+  margin-bottom: 18px;
+}
+
+.hero-title-first {
+  width: 180px; /* ajuste proporcional ao texto "Transforme sua experiência" */
+  height: auto;
+  max-width: 100%;
+  margin-bottom: 12px; /* espaçamento visual */
+}
+
+.hero-title-sub {
+  font-size: clamp(11.5px, 1.8vw, 14.5px);
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 8px;
+  text-transform: none;
+  margin-top: 8px;
+}
+
+.hero-tagline {
+  font-size: clamp(11px, 1.4vw, 13px);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 4px;
+  text-transform: none;
+  margin-bottom: 44px;
+}
+
+.hero-pill-link {
+  display: inline-block;
+  padding: 10px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-pill);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: none;
+  transition: var(--transition);
+  background: #c89d54;
+}
+
+.hero-pill-link:hover {
+  background-color: #ffffff;
+  color: var(--bg-dark);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   6. SOBRE NÓS (FUNDO ESCURO COM LOGO 'F' E FOTO EM ARCO ROMANO COM BORDA DOURADA)
+   -------------------------------------------------------------------------- */
+.section-about {
+  background-color: var(--bg-dark);
+  padding: 120px 0;
+  position: relative;
+  border-top: 1px solid var(--color-border-dark);
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 70px;
+  align-items: flex-start;
+}
+
+.about-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* Logotipo 'f' minúsculo no canto superior esquerdo com traço horizontal dourado */
+/* .about-brand-mark {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 24px;
+} */
+
+.about-monogram-img {
+  width: 52px;
+  height: auto;
+  border-radius: 4px;
+
+}
+
+.about-gold-stroke {
+  display: inline-block;
+  width: 44px;
+  height: 2.5px;
+  background-color: transparent;
+  border-radius: 2px;
+  margin-left: 12px;
+}
+
+Moldura da Foto em Arco Vertical Romano com Detalhe Dourado Sutil (#cda568)
+.about-arch-frame {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 190px 190px 0 0;
+  background-color: transparent;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.about-arch-inner {
+  width: 100%;
+  height: 440px;
+  border-radius: 187px 187px 0 0;
+  overflow: hidden;
+  background: #181a18;
+}
+
+.about-arch-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.about-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-title {
+  font-size: clamp(44px, 5.2vw, 56px);
+  font-weight: 700;
+  line-height: 1.05;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  margin-bottom: 28px;
+}
+
+.about-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: var(--color-text-muted-dark);
+  max-width: 500px;
+}
+
+/* --------------------------------------------------------------------------
+   7. NOSSAS SOLUÇÕES (FUNDO BRANCO COM IMAGENS OVAIS E MODAL INTERATIVO)
+   -------------------------------------------------------------------------- */
+.section-solutions {
+  background-color: var(--bg-white);
+  color: var(--color-text-dark);
+  padding: 120px 0;
+  position: relative;
+}
+
+.solutions-title {
+  text-align: center;
+  font-size: clamp(38px, 4.4vw, 50px);
+  font-weight: 700;
+  color: var(--color-text-dark);
+  letter-spacing: -0.5px;
+  margin-bottom: 72px;
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.solution-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 10px;
+}
+
+/* Moldura Oval / Elipse Horizontal */
+.solution-oval-frame {
+  width: 220px;
+  height: 135px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 26px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+  background-color: #f0f0f0;
+}
+
+.solution-oval-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(15%);
+  transition: var(--transition);
+}
+
+.solution-card:hover .solution-oval-frame {
+  transform: scale(1.05);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
+}
+
+.solution-card:hover .solution-oval-frame img {
+  filter: grayscale(0%);
+}
+
+.solution-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  line-height: 1.35;
+  margin-bottom: 14px;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.solution-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-text-muted-light);
+  margin-bottom: 26px;
+  max-width: 300px;
+  flex-grow: 1;
+}
+
+.solution-btn {
+  padding: 11px 32px;
+  font-size: 13.5px;
+  letter-spacing: 0.3px;
+}
+
+/* ==========================================================================
+   MODAL INTERATIVO "SAIBA MAIS"
+   ========================================================================== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-color: rgba(10, 12, 10, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: modalFadeIn 0.25s ease-out;
+}
+
+.modal-card {
+  background-color: var(--bg-dark-card);
+  border: 1.5px solid rgba(205, 165, 104, 0.35);
+  border-radius: 22px;
+  max-width: 620px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 40px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  position: relative;
+  color: var(--color-text-white);
+  animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-close-x {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.modal-close-x:hover {
+  background-color: transparent;
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+.modal-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-gold);
+  letter-spacing: 2px;
+  text-transform: none;
+  margin-bottom: 8px;
+}
+
+.modal-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.modal-lead {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #b2bac2;
+  margin-bottom: 24px;
+}
+
+.modal-scope-heading {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 16px;
+  border-left: 3px solid var(--color-gold);
+  padding-left: 10px;
+}
+
+.modal-scope-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.modal-scope-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #d0d7d1;
+}
+
+.modal-check-icon {
+  color: var(--color-gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 24px;
+}
+
+.modal-action-btn {
+  padding: 13px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  flex-grow: 1;
+}
+
+.modal-secondary-btn {
+  padding: 13px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-radius: var(--radius-pill);
+}
+
+.modal-secondary-btn:hover {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalSlideUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* --------------------------------------------------------------------------
+   8. O QUE OS CLIENTES DIZEM (FUNDO ESCURO COM CARROSSEL)
+   -------------------------------------------------------------------------- */
+.section-testimonials {
+  background-color: var(--bg-dark);
+  padding: 120px 0;
+  position: relative;
+  border-top: 1px solid var(--color-border-dark);
+  overflow: hidden;
+}
+
+.testimonials-container {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.testimonials-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonials-monogram {
+  width: 48px;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 26px;
+  opacity: 0.95;
+}
+
+.testimonials-title {
+  font-size: clamp(42px, 5vw, 56px);
+  font-weight: 700;
+  line-height: 1.12;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.testimonial-carousel-wrap {
+  width: 100%;
+}
+
+.testimonial-cards-viewport {
+  overflow: hidden;
+  border-radius: var(--radius-card);
+}
+
+.testimonial-cards-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.testimonial-card {
+  min-width: 100%;
+  background: var(--bg-dark-card);
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-card);
+  padding: 42px 46px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 240px;
+}
+
+.testimonial-quote {
+  font-size: 15.5px;
+  line-height: 1.85;
+  color: #d1d8e0;
+  margin-bottom: 26px;
+}
+
+.testimonial-author {
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.testimonial-role {
+  font-size: 13.5px;
+  color: var(--color-gold);
+  font-weight: 500;
+}
+
+.testimonial-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.t-arrow {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: transparent;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.t-arrow:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  transform: scale(1.08);
+}
+
+.t-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.t-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.25);
+  transition: var(--transition);
+}
+
+.t-dot.active {
+  width: 26px;
+  background-color: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   9. CTA BANNER INTERMEDIÁRIO
+   -------------------------------------------------------------------------- */
+.section-cta-banner {
+  position: relative;
+  min-height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 90px 24px;
+}
+
+.cta-banner-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.cta-banner-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.cta-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 13, 12, 0.84);
+}
+
+.cta-banner-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.cta-banner-content {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.cta-banner-title {
+  font-size: clamp(30px, 3.8vw, 44px);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+
+.cta-banner-desc {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #c0c8d2;
+  margin-bottom: 36px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-banner {
+  padding: 14px 38px;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+
+.cta-banner-corner-logo {
+  position: absolute;
+  bottom: 20px;
+  right: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  opacity: 0.95;
+}
+
+.corner-first {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.corner-sub {
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 3.5px;
+  color: #ffffff;
+  margin-top: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   10. FALE CONOSCO (FUNDO BRANCO COM ARCO HORIZONTAL DOURADO E SELECT CUSTOMIZADO)
+   -------------------------------------------------------------------------- */
+.section-contact {
+  background-color: var(--bg-white);
+  color: var(--color-text-dark);
+  padding: 120px 0;
+  position: relative;
+}
+
+.contact-section-title {
+  font-size: clamp(38px, 4.4vw, 50px);
+  font-weight: 700;
+  color: var(--color-text-dark);
+  letter-spacing: -0.5px;
+  margin-bottom: 64px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 70px;
+  align-items: flex-start;
+}
+
+.contact-left {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Foto em Arco Arqueado na Horizontal: topo em formato de arco (ogiva/arco romano: 150px 150px 0 0),
+   base reta, com detalhe de borda/faixa estrutural dourada (#cda568) contornando a curvatura superior */
+.contact-arch-wrapper {
+  background-color: transparent;
+  width: 100%;
+  max-width: 440px;
+  height: 290px; /* Proporção ideal mais larga que alta */
+  border-radius: 150px 150px 0 0; /* Arco romano arqueado */
+  border-top-left-radius: 150px;
+  border-top-right-radius: 150px;
+  overflow: hidden;
+  padding: 4px 4px 0 4px; /* Moldura/faixa estrutural dourada contornando o arco */
+  box-shadow: none; /* Estilo limpo sem sombra pesada ao redor do arco */
+  margin-bottom: 30px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.contact-arch-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 146px 146px 0 0;
+  border-top-left-radius: 146px;
+  border-top-right-radius: 146px;
+  overflow: hidden;
+  position: relative;
+  background-color: #1a1a1a;
+}
+
+.contact-arch-inner img,
+.contact-arch-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 146px 146px 0 0;
+  border-top-left-radius: 146px;
+  border-top-right-radius: 146px;
+  display: block;
+}
+
+.contact-quick-info {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 3px;
+}
+
+.info-val {
+  font-size: 14.5px;
+  color: var(--color-text-muted-light);
+  transition: var(--transition);
+}
+
+.info-val:hover {
+  color: var(--color-gold);
+}
+
+.contact-right {
+  width: 100%;
+}
+
+.contact-card {
+  background-color: var(--bg-light-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: 18px;
+  padding: 38px 42px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 7px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #ffffff;
+  border: 1px solid #d8e0e8;
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--color-text-dark);
+  transition: var(--transition);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(205, 165, 104, 0.16);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* ==========================================================================
+   CUSTOM SELECT (ELIMINANDO O AZUL PADRÃO DO NAVEGADOR COM #cda568 e BRANCO)
+   ========================================================================== */
+.custom-select-container {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select-trigger {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #ffffff;
+  border: 1px solid #d8e0e8;
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--color-text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: left;
+}
+
+.custom-select-trigger:focus,
+.custom-select-trigger.active {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(205, 165, 104, 0.18);
+  outline: none;
+}
+
+.select-chevron {
+  color: var(--color-text-muted-light);
+  transition: transform 0.2s ease;
+}
+
+.select-chevron.rotate {
+  transform: rotate(180deg);
+  color: var(--color-gold);
+}
+
+.custom-select-options {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border: 1.5px solid var(--color-gold);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  z-index: 50;
+  overflow: hidden;
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+  animation: selectFadeIn 0.15s ease-out;
+}
+
+.custom-select-option {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: var(--color-text-dark);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+/* Hover e Seleção na Identidade Visual com #cda568 e Texto Branco */
+.custom-select-option:hover {
+  background-color: var(--color-gold) !important;
+  color: #ffffff !important;
+}
+
+.custom-select-option.active-gold {
+  background-color: var(--color-gold) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+@keyframes selectFadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.btn-form-submit {
+  width: 100%;
+  background-color: #cda568;
+  color: #ffffff;
+  padding: 14px;
+  font-size: 14.5px;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: var(--transition);
+  margin-top: 6px;
+}
+
+.btn-form-submit:hover {
+  background-color: #07101d;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(12, 26, 46, 0.28);
+}
+
+/* --------------------------------------------------------------------------
+   11. FOOTER (FUNDO ESCURO)
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: var(--bg-footer);
+  color: #ffffff;
+  padding: 90px 0 36px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.footer-logo-first {
+  font-family: var(--font-serif);
+  font-size: 34px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.footer-logo-sub {
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #ffffff;
+  margin-top: 4px;
+}
+
+.footer-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #8e98a4;
+  max-width: 380px;
+}
+
+.footer-col-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-transform: none;
+  margin-bottom: 22px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  font-size: 14px;
+  color: #8e98a4;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-social-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #8e98a4;
+}
+
+.footer-social-item:hover {
+  color: var(--color-gold);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 28px;
+  text-align: center;
+  font-size: 13px;
+  color: #64707d;
+}
+
+
+/* --------------------------------------------------------------------------
+   13. RESPONSIVIDADE (MEDIA QUERIES)
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    text-align: center;
+  }
+
+  .about-left {
+    align-items: center;
+  }
+
+  .about-arch-frame {
+    margin: 0 auto;
+  }
+
+  .about-text-content {
+    margin: 0 auto;
+  }
+
+  .solutions-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .testimonials-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .contact-left {
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-arch-wrapper {
+    margin: 0 auto 30px auto;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .cta-banner-corner-logo {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    height: 72px;
+  }
+
+  .header-nav {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(12, 13, 12, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 30px 24px;
+    gap: 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transform: translateY(-120%);
+    transition: var(--transition);
+  }
+
+  .header-nav.active {
+    transform: translateY(0);
+  }
+
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .btn-header {
+    display: none;
+  }
+
+  .form-row-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-card {
+    padding: 30px 24px;
+  }
+
+  .contact-card {
+    padding: 28px 20px;
+  }
+
+  .modal-card {
+    padding: 28px 20px;
+  }
+
+  .section-about,
+  .section-solutions,
+  .section-testimonials,
+  .section-contact {
+    padding: 80px 0;
+  }
+}
+
+/* Reduz o tamanho do logo no footer */
+.footer-logo img {
+  width: 120px; /* ajuste o valor conforme necessário */
+  height: auto;
+}
+
+/* Force logo size in footer */
+.footer-logo img {
+  width: 120px; /* adjust as needed */
+  height: auto;
+  max-width: 100%;
+}
+
+/* Force logo size in footer */
+.footer-logo img {
+  width: 120px !important; /* ajuste conforme necessário */
+  height: auto !important;
+  max-width: 100% !important;
+}

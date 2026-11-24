@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 160" width="400" height="160" fill="none">
+  <!-- Centered 'first' -->
+  <text x="200" y="85" text-anchor="middle" font-family="'Playfair Display', 'Didot', 'Georgia', serif" font-size="82" font-weight="700" letter-spacing="2" fill="#ffffff">
+    first
+  </text>
+  <!-- Centered 'CAREER ADVISORY' -->
+  <text x="200" y="118" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="14" font-weight="600" letter-spacing="8" fill="#cda568">
+    CAREER ADVISORY
+  </text>
+  <!-- Tagline 'SUA CARREIRA, NOVAS POSSIBILIDADES' -->
+  <text x="200" y="145" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11" font-weight="500" letter-spacing="4" fill="#a0aab5">
+    SUA CARREIRA, NOVAS POSSIBILIDADES
+  </text>
+</svg>

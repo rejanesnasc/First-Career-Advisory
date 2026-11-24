@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" width="280" height="60" fill="none">
+  <!-- Monogram f icon -->
+  <g transform="translate(6, 6)">
+    <rect width="48" height="48" rx="12" fill="#181a18" stroke="#cda568" stroke-width="1.2" stroke-opacity="0.4" />
+    <path d="M30 13 C25.5 13 21 15.8 21 21 L21 24.5 L16.5 24.5 L16.5 29 L21 29 L21 41 L26.5 41 L26.5 29 L31.5 29 L32.5 24.5 L26.5 24.5 L26.5 21 C26.5 18.5 28 17.5 30.5 17.5 C31.3 17.5 32.2 17.8 32.8 18 L33 13.5 C32 13.2 31.2 13 30 13 Z" fill="#cda568" />
+    <circle cx="33" cy="15" r="1.5" fill="#ffffff" />
+  </g>
+  <!-- Wordmark 'first' in editorial serif -->
+  <text x="66" y="34" font-family="'Playfair Display', 'Didot', 'Georgia', serif" font-size="30" font-weight="700" letter-spacing="1" fill="#ffffff">
+    first
+  </text>
+  <!-- Subtitle 'CAREER ADVISORY' in Montserrat sans-serif -->
+  <text x="67" y="47" font-family="'Montserrat', sans-serif" font-size="8.5" font-weight="600" letter-spacing="4" fill="#cda568">
+    CAREER ADVISORY
+  </text>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="16" fill="#0c0d0c" />
+  <circle cx="32" cy="32" r="28" stroke="#cda568" stroke-width="1.5" stroke-opacity="0.35" fill="none" />
+  <!-- Elegant 'f' monogram -->
+  <path d="M38 15 C33 15 28 18 28 24 L28 28 L23 28 L23 33 L28 33 L28 49 L34 49 L34 33 L40 33 L41 28 L34 28 L34 23.5 C34 20.5 36 19.5 38.5 19.5 C39.5 19.5 40.5 19.8 41 20 L41 15.5 C40 15.2 39 15 38 15 Z" fill="#cda568" />
+  <circle cx="41.5" cy="18" r="1.5" fill="#ffffff" />
+</svg>
