@@ -361,8 +361,7 @@ button {
   width: 420px; /* ajuste proporcional ao texto "Transforme sua experiência" */
   height: auto;
   max-width: 100%;
-  margin-bottom: 12px;
-  font-family: var(--font-serif);
+ font-family: var(--font-serif);
   font-size: clamp(72px, 10vw, 120px);
   font-weight: 600;
   line-height: 1.1; 

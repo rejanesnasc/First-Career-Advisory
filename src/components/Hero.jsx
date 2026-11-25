@@ -16,8 +16,7 @@ export default function Hero({ t }) {
       <div className="hero-inner">
         {/* Tipografia Editorial Centralizada */}
         <div className="hero-branding">
-          <img src="/assets/images/hero-logo.png" alt="First Career Advisory" className="hero-title-first" />
-
+          <img src="/assets/images/logo-hero.png" alt="First Career Advisory" className="hero-title-first" />
         </div>
 
         {/* Tagline Dourada / Suave */}
@@ -26,7 +25,7 @@ export default function Hero({ t }) {
         {/* Botão Pílula Minimalista */}
         <div className="hero-cta-wrapper">
           <a href="#servicos" className="btn btn-gold hero-pill-link">
-          {t.hero_contact}
+            {t.hero_contact}
           </a>
         </div>
       </div>
