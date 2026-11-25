@@ -1517,11 +1517,23 @@ html, body {
 
 @media (max-width: 768px) { .site-header, .site-header > div { max-width: 100%; box-sizing: border-box; } .testimonials-container > *, .testimonial-carousel-wrap, .testimonial-cards-viewport { min-width: 0; max-width: 100%; width: 100%; overflow: hidden; box-sizing: border-box; } }
 
-@media (max-width: 768px) { .testimonials-left { padding-left: 16px !important; padding-right: 16px !important; overflow: visible !important; } .testimonials-monogram { display: block !important; width: 48px !important; height: auto !important; max-width: 100% !important; object-fit: contain !important; margin-bottom: 14px !important; } }
-
-@media (max-width: 768px) { .testimonials-left { padding-left: 20px !important; padding-right: 20px !important; overflow: visible !important; } .testimonials-monogram { display: block !important; width: 100px !important; height: auto !important; max-width: 100% !important; margin-left: 0 !important; margin-bottom: 14px !important; object-fit: contain !important; opacity: 0.95 !important; } }
 
 @media (max-width: 768px) {
+  .testimonials-left {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    overflow: visible !important;
+  }
+  .testimonials-monogram {
+    display: block !important;
+    width: 100px !important;
+    height: auto !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-bottom: 14px !important;
+    object-fit: contain !important;
+    opacity: 0.95 !important;
+  }
   .site-header {
     height: auto !important;
     min-height: 64px;
@@ -1529,7 +1541,7 @@ html, body {
     padding-bottom: 8px !important;
   }
   .hero-bg-media img {
-    object-position: center 15% !important;
+    object-position: right 10% !important;
   }
   .hero-branding {
     margin-top: -120px !important;
