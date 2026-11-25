@@ -1,12 +1,12 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    FIRST CAREER ADVISORY - OFFICIAL STYLESHEET (REACT + VITE)
-   Atualizado conforme todas as especificações e identidade visual:
-   1. Header: Seletor de idioma em botão único com globo (Lucide) e borda #cda568
-   2. Sobre Nós: Monograma 'f' no canto superior esquerdo com traço dourado
+   Atualizado conforme todas as especificaÃ§Ãµes e identidade visual:
+   1. Header: Seletor de idioma em botÃ£o Ãºnico com globo (Lucide) e borda #cda568
+   2. Sobre NÃ³s: Monograma 'f' no canto superior esquerdo com traÃ§o dourado
       e foto em arco vertical romano com detalhe dourado (#cda568)
-   3. Nossas Soluções: Botão 'Saiba mais' com Modal dinâmico, escopo e WhatsApp
+   3. Nossas SoluÃ§Ãµes: BotÃ£o 'Saiba mais' com Modal dinÃ¢mico, escopo e WhatsApp
    4. Fale Conosco: Foto em arco horizontal com moldura dourada (#cda568) e sem sombra;
-      Select customizado com hover/seleção em dourado (#cda568) sem azul do navegador
+      Select customizado com hover/seleÃ§Ã£o em dourado (#cda568) sem azul do navegador
    5. Todas as imagens e logotipos em formato JPG
    ========================================================================== */
 
@@ -47,7 +47,7 @@
   --container-width: 1220px;
   --header-height: 84px;
 
-  /* Transições */
+  /* TransiÃ§Ãµes */
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -114,7 +114,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   3. BOTÕES GERAIS
+   3. BOTÃ•ES GERAIS
    -------------------------------------------------------------------------- */
 .btn {
   display: inline-flex;
@@ -160,7 +160,7 @@ button {
   box-shadow: none !important;
 }
 
-/* Deixa o botão EN/PT transparente como na 3ª imagem */
+/* Deixa o botÃ£o EN/PT transparente como na 3Âª imagem */
 .lang-switch,
 .lang-btn {
   background-color: rgba(255, 255, 255, 0.08);
@@ -238,7 +238,7 @@ button {
   gap: 16px;
 }
 
-/* Seletor de Idioma: Botão Único Arredondado com Globo e Borda Dourada (#cda568) */
+/* Seletor de Idioma: BotÃ£o Ãšnico Arredondado com Globo e Borda Dourada (#cda568) */
 .lang-toggle-btn {
   display: inline-flex;
   align-items: center;
@@ -358,7 +358,7 @@ button {
 }
 
 .hero-title-first {
-  width: 420px; /* ajuste proporcional ao texto "Transforme sua experiência" */
+  width: 420px; /* ajuste proporcional ao texto "Transforme sua experiÃªncia" */
   height: auto;
   max-width: 100%;
  font-family: var(--font-serif);
@@ -412,7 +412,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   6. SOBRE NÓS (FUNDO ESCURO COM LOGO 'F' E FOTO EM ARCO ROMANO COM BORDA DOURADA)
+   6. SOBRE NÃ“S (FUNDO ESCURO COM LOGO 'F' E FOTO EM ARCO ROMANO COM BORDA DOURADA)
    -------------------------------------------------------------------------- */
 .section-about {
   background-color: var(--bg-dark);
@@ -435,7 +435,7 @@ button {
   position: relative;
 }
 
-/* Logotipo 'f' minúsculo no canto superior esquerdo com traço horizontal dourado */
+/* Logotipo 'f' minÃºsculo no canto superior esquerdo com traÃ§o horizontal dourado */
 /* .about-brand-mark {
   display: inline-flex;
   align-items: center;
@@ -512,7 +512,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   7. NOSSAS SOLUÇÕES (FUNDO BRANCO COM IMAGENS OVAIS E MODAL INTERATIVO)
+   7. NOSSAS SOLUÃ‡Ã•ES (FUNDO BRANCO COM IMAGENS OVAIS E MODAL INTERATIVO)
    -------------------------------------------------------------------------- */
 .section-solutions {
   background-color: var(--bg-white);
@@ -892,7 +892,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   9. CTA BANNER INTERMEDIÁRIO
+   9. CTA BANNER INTERMEDIÃRIO
    -------------------------------------------------------------------------- */
 .section-cta-banner {
   position: relative;
@@ -970,7 +970,7 @@ button {
   width: 140px; /* <--- Adicione a largura ideal para o logo */
 }
 
-/* Garanta que a imagem dentro dele respeite o espaço */
+/* Garanta que a imagem dentro dele respeite o espaÃ§o */
 .cta-banner-corner-logo img {
   width: 100%;
   height: auto;
@@ -1029,7 +1029,7 @@ button {
   background-color: var(--color-gold);
   width: 100%;
   max-width: 440px;
-  height: 290px; /* Proporção ideal mais larga que alta */
+  height: 290px; /* ProporÃ§Ã£o ideal mais larga que alta */
   border-radius: 130px 130px 0 12px; /* Arco romano arqueado */
   /* border-top-left-radius: 150px;
   border-top-right-radius: 150px; */
@@ -1167,7 +1167,7 @@ button {
 }
 
 /* ==========================================================================
-   CUSTOM SELECT (ELIMINANDO O AZUL PADRÃO DO NAVEGADOR COM #cda568 e BRANCO)
+   CUSTOM SELECT (ELIMINANDO O AZUL PADRÃƒO DO NAVEGADOR COM #cda568 e BRANCO)
    ========================================================================== */
 .custom-select-container {
   position: relative;
@@ -1233,7 +1233,7 @@ button {
   user-select: none;
 }
 
-/* Hover e Seleção na Identidade Visual com #cda568 e Texto Branco */
+/* Hover e SeleÃ§Ã£o na Identidade Visual com #cda568 e Texto Branco */
 .custom-select-option:hover {
   background-color: var(--color-gold) !important;
   color: #ffffff !important;
@@ -1485,8 +1485,6 @@ button {
   .section-contact {
     padding: 80px 0;
   }
-  $css = Get-Content .\src\index.css -Raw
-$addition = @"
 
 html, body {
   overflow-x: hidden;
@@ -1522,3 +1520,23 @@ html, body {
 @media (max-width: 768px) { .testimonials-left { padding-left: 16px !important; padding-right: 16px !important; overflow: visible !important; } .testimonials-monogram { display: block !important; width: 48px !important; height: auto !important; max-width: 100% !important; object-fit: contain !important; margin-bottom: 14px !important; } }
 
 @media (max-width: 768px) { .testimonials-left { padding-left: 20px !important; padding-right: 20px !important; overflow: visible !important; } .testimonials-monogram { display: block !important; width: 100px !important; height: auto !important; max-width: 100% !important; margin-left: 0 !important; margin-bottom: 14px !important; object-fit: contain !important; opacity: 0.95 !important; } }
+
+@media (max-width: 768px) {
+  .site-header {
+    height: auto !important;
+    min-height: 64px;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+  .hero-bg-media img {
+    object-position: center 15% !important;
+  }
+  .hero-branding {
+    margin-top: -120px !important;
+    margin-bottom: 16px !important;
+  }
+  .hero-title-first {
+    width: 220px !important;
+    max-width: 75vw !important;
+  }
+}
