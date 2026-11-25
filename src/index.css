@@ -1518,3 +1518,5 @@ html, body {
 }
 
 @media (max-width: 768px) { .site-header, .site-header > div { max-width: 100%; box-sizing: border-box; } .testimonials-container > *, .testimonial-carousel-wrap, .testimonial-cards-viewport { min-width: 0; max-width: 100%; width: 100%; overflow: hidden; box-sizing: border-box; } }
+
+@media (max-width: 768px) { .testimonials-left { padding-left: 16px !important; padding-right: 16px !important; overflow: visible !important; } .testimonials-monogram { display: block !important; width: 48px !important; height: auto !important; max-width: 100% !important; object-fit: contain !important; margin-bottom: 14px !important; } }
