@@ -8,7 +8,7 @@ export default function Footer({ t }) {
           {/* Marca & Resumo */}
           <div className="footer-brand">
             <div className="footer-logo">
-           <img src="/assets/images/hero-logo.png" alt="First Career Advisory" style={{width: "120px", height: "auto"}} />
+              <img src="/assets/images/logo-hero.png" alt="First Career Advisory" style={{ width: "120px", height: "auto" }} />
             </div>
             <p className="footer-desc">{t.footer_tagline}</p>
           </div>
