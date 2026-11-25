@@ -1517,29 +1517,12 @@ html, body {
 
 
 @media (max-width: 768px) {
-  .testimonials-left {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-    overflow: visible !important;
-  }
-  .testimonials-monogram {
-    display: block !important;
-    width: 100px !important;
-    height: auto !important;
-    max-width: 100% !important;
-    margin-left: 0 !important;
-    margin-bottom: 14px !important;
-    object-fit: contain !important;
-    opacity: 0.95 !important;
-  }
   .site-header {
     top: 0;
     left: 0;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
   }
   .header-actions {
     gap: 8px !important;
