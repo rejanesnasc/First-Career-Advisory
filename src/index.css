@@ -1533,16 +1533,23 @@ html, body {
     opacity: 0.95 !important;
   }
   .site-header {
-    height: auto !important;
-    min-height: 64px;
-    padding-top: 8px !important;
-    padding-bottom: 8px !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .header-actions {
+    gap: 8px !important;
+    flex-shrink: 0;
   }
   .hero-section {
     align-items: flex-end !important;
   }
   .hero-bg-media img {
-    object-position: right 10% !important;
+    object-position: 62% 12% !important;
   }
   .hero-inner {
     padding-bottom: 24px !important;
@@ -1550,10 +1557,13 @@ html, body {
   .hero-branding {
     margin-top: 0 !important;
     margin-bottom: 10px !important;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.75) !important;
   }
   .hero-title-first {
     width: 175px !important;
     max-width: 65vw !important;
+    filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.75));
+  }
+  .hero-tagline {
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9) !important;
   }
 }
