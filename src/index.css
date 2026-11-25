@@ -1549,7 +1549,7 @@ html, body {
     align-items: flex-end !important;
   }
   .hero-bg-media img {
-    object-position: 62% 12% !important;
+    object-position: right 12% !important;
   }
   .hero-inner {
     padding-bottom: 24px !important;
